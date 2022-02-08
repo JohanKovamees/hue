@@ -9,7 +9,7 @@ b = Bridge('192.168.1.219')
 b.get_api()
 lights = b.lights
 
-input = sys.argv[1]
+script_arg = sys.argv[1]
 
 def turn_off_lights():
     b.set_light([1,2,3,4],'on', False)
@@ -17,7 +17,10 @@ def turn_off_lights():
 def turn_on_lights(): 
     b.set_light([1,2,3,4],'on', True)
 
-if input=='on':
+if script_arg=='on':
     turn_on_lights()
-elif input=='off':
+elif script_arg=='off':
     turn_off_lights()
+elif script_arg=="print":
+    for l in lights:
+        print(l.name)
