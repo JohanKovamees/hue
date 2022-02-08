@@ -13,8 +13,6 @@ input = sys.argv[1]
 
 def turn_off_lights():
     b.set_light([1,2,3,4],'on', False)
-    for l in lights:
-        l.brightness(254)
         
 def turn_on_lights(): 
     b.set_light([1,2,3,4],'on', True)
