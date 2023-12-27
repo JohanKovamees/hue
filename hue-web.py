@@ -35,6 +35,13 @@ def create_app(test_config=None):
             b.set_light([l],'on', True)
             lights[l].brightness = 127
         return "Turning Cozy"
+    
+    @app.route('/night')
+    def night():
+        for l in lights:
+            b.set_light([l],'on', True)
+            lights[l].brightness = 1
+        return "Night"
 
     if __name__ == '__main__':
         app.run(host='0.0.0.0',debug=False,use_debugger=False, use_reloader=False)
